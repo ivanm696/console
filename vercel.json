@@ -1,0 +1,21 @@
+{
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "build/client",
+  "framework": "remix",
+  "nodejs": "20.x",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "api/**/*.ts": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ]
+}

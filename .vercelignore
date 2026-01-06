@@ -1,0 +1,17 @@
+/test
+/tests
+/.git
+/.github
+/.husky
+/.prettierrc
+/.editorconfig
+/CONTRIBUTING.md
+/README.md
+/.env
+/.env.*.local
+/node_modules
+/.cache
+/.vite
+/dist
+/build
+pnpm-lock.yaml
