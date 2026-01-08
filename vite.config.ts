@@ -6,6 +6,9 @@ import { optimizeCssModules } from 'vite-plugin-optimize-css-modules';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig((config) => {
+  // Проверяем, находимся ли мы в среде Vercel
+  const isVercel = process.env.VERCEL === '1';
+
   return {
     build: {
       target: 'esnext',
@@ -14,7 +17,8 @@ export default defineConfig((config) => {
       nodePolyfills({
         include: ['path', 'buffer'],
       }),
-      config.mode !== 'test' && process.env.RUNTIME !== 'edge' && remixCloudflareDevProxy(),
+      // Мы отключаем прокси Cloudflare, если мы на Vercel или в режиме теста
+      !isVercel && config.mode !== 'test' && process.env.RUNTIME !== 'edge' && remixCloudflareDevProxy(),
       remixVitePlugin({
         future: {
           v3_fetcherPersist: true,
