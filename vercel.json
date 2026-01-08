@@ -2,6 +2,5 @@
   "version": 2,
   "framework": "remix",
   "buildCommand": "pnpm run build",
-  "outputDirectory": "build/client",
-  "installCommand": "pnpm install --pnpmfile=./pnpmfile.cjs || pnpm install"
+  "outputDirectory": "build/client"
 }
