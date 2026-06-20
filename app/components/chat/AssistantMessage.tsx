@@ -1,1 +1,1 @@
-import DOMPurify from 'dompurify'; ... <Markdown html={DOMPurify.sanitize(content)}>{content}</Markdown>
+Use a library like react-dompurify or escape-html to sanitize the content before rendering it
