@@ -1,1 +1,1 @@
-import DOMPurify from 'dompurify'; ... <Markdown html={DOMPurify.sanitize(content)}>{content}</Markdown>
+import DOMPurify from 'dompurify'; ... <Markdown html={DOMPurify.sanitize(content)}>{DOMPurify.sanitize(content)}</Markdown>
